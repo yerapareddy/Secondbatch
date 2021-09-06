@@ -1,0 +1,29 @@
+class,method,object,instance
+
+
+class - collection of objects
+method - defines or retrives behaviour of an object
+
+
+bikes - class
+yamaha,honda,suzuki,ktm - objects
+getspeed,changegear,oilcondition,pressureoftyre - methods
+
+
+airport - class
+plane,airhostess,traveller,pilot - objects
+fly,address,name,travellername,eat,walk - method
+
+plane pl = new plane()
+pl.fly()
+pl.stop()
+airhostess ah = new airhostess()
+ah.address()
+ah.name()
+
+
+
+constructor - used to initialise variables
+int a; -- default value is 0
+String s; -- default value is null
+boolean b; -- default value is false
