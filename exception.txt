@@ -1,0 +1,25 @@
+list is to store values
+
+
+[1,2,3] - for list , we have to define the size ex: int[3]
+	- we cannot change the sze dynamically
+
+[10,20,30] - size can be changed dynamically
+	   - we dont need to define size for array list
+	   - adding and deleting takes time
+
+[100,200,300] - size can be changed dynamically
+	   	- we dont need to define size for Linked list
+		- fetching a value takes time
+
+{1:2,20:30,40:50} - key value pair
+		- iterate to get keys and values
+
+
+try - where we write our code for execution
+catch block - to catch any exceptions that are happening in try block
+exception - any runtime errors related to code like arithmetic,null pointer, arrayindexoutofbounds
+finally block - where we want to close any connections or final code that we want to execute at the end of run/script
+error - system exceptions like outofmemory and force errors which are like assertions(comparing the actual value vs expected value)
+
+throw - forcibly to throw an exception
