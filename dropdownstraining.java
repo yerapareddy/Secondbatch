@@ -30,10 +30,11 @@ public class dropdownstraining {
 		//check if radio button is selected
 		String isselected = driver.findElement(By.xpath("//p[contains(text(),'Round')]/ancestor::div/preceding-sibling::div/input")).getAttribute("checked");
 		System.out.println(isselected);
+		Thread.sleep(2000);
 		if(isselected !=null && isselected.equals("true")){
 			System.out.println("it is already selected");
 		} else{
-			driver.findElement(By.xpath("//p[contains(text(),'Round')]/ancestor::div/preceding-sibling::div/input")).click();
+			driver.findElement(By.xpath("//p[contains(text(),'Round')]/ancestor::div/preceding-sibling::div/span")).click();
 		}
 	}
 
