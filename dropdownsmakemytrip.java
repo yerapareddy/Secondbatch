@@ -33,7 +33,11 @@ public class dropdownsmakemytrip {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//p[contains(text(),'Delhi')]")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[contains(@class,'DayPicker-Day--today')]")).click();
+		//selecting current date
+		//driver.findElement(By.xpath("//div[contains(@class,'DayPicker-Day--today')]")).click();
+		//selecting future date
+		driver = selectfuturedate(driver,"January","11");
+		
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//input[@id='travellers']/preceding-sibling::span")).click();
 		Thread.sleep(2000);
@@ -78,6 +82,27 @@ public class dropdownsmakemytrip {
 		dropdown.selectByIndex(5);*/
 		
 		
+	}
+	
+	public static WebDriver selectfuturedate(WebDriver driver,String month,String Date){
+		//selecting a future date
+				List<WebElement> eles = driver.findElements(By.xpath("//div[@class='DayPicker-Caption']/div"));
+				for(WebElement el:eles){
+					if(el.getText().contains(month)){
+						List<WebElement> dates = driver.findElements(By.xpath("//div[contains(text(),'"+month+"')]/ancestor::div/following-sibling::div/div/div[@class='DayPicker-Day']/div/p[@class=' todayPrice']/preceding-sibling::p"));
+						for(WebElement date:dates){
+							if(date.getText().equals(Date)){
+								date.click();
+								break;
+							}
+						}
+					}else{
+						driver.findElement(By.xpath("//span[@aria-label='Next Month']")).click();
+						selectfuturedate(driver,month,Date);
+					}
+					break;
+				}
+				return driver;
 	}
 
 }
