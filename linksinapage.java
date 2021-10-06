@@ -1,14 +1,20 @@
 package seleniumtraining;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class linksinapage {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws MalformedURLException, IOException {
 		// TODO Auto-generated method stub
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Yerapa.Reddy\\Downloads\\chromedriver\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
@@ -28,7 +34,26 @@ public class linksinapage {
 		//images below a particular text
 		System.out.println(driver.findElements(By.xpath("//span[contains(text(),'About the Site')]/following::img")).size());
 		//images above a particular text
-		System.out.println(driver.findElements(By.xpath("//span[contains(text(),'About the Site')]/preceding::img")).size());	
+		System.out.println(driver.findElements(By.xpath("//span[contains(text(),'About the Site')]/preceding::img")).size());
+		
+		HttpURLConnection hc=null;
+		
+		List<WebElement> ele = driver.findElements(By.tagName("a"));
+		
+		for(WebElement el:ele){
+			String url = el.getAttribute("href");
+			if(url!=null){
+			hc = (HttpURLConnection) new URL(url).openConnection();
+			hc.setRequestMethod("HEAD"); //GET,POST,PUT,HEAD,DELETE,PATCH
+			hc.connect();
+			System.out.println(hc.getResponseCode());
+			if(hc.getResponseCode() ==200){
+				System.out.println("success");
+			}
+			}
+		}
+		
 	}
+	
 
 }
