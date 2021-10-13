@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Demo Suite"> <!-- bundle of test cases -->
+  
+  <test name="urlnavigation"> <!-- test folder based on functionality -->
+  	<classes>
+  	<class name="testngtraining.navigatetourl"/>
+  	</classes>
+  </test>
+  <test name="Loans">
+  <classes>
+  	<class name="testngtraining.annotationtraining"/>
+  	</classes>
+  </test>
+</suite> 
