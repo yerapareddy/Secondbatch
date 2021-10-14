@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Mathematical calculation">
+<parameter name="a" value="5"></parameter><!-- suite level parameters -->
+<parameter name="b" value="8"></parameter>
+  <test name="Add">
+    <classes>
+      <class name="testngtraining.maths">
+      <methods>
+      <include name ="add"/>
+      </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="Subtract">
+  <parameter name="a" value="10"></parameter><!-- test folder level parameters -->
+  <parameter name="b" value="2"></parameter>
+    <classes>
+      <class name="testngtraining.maths">
+      <methods>
+      <include name ="subtract"/>
+      </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="Multiplication">
+    <classes>
+      <class name="testngtraining.maths">
+      <methods>
+      <include name ="multiply"/>
+      </methods>
+      </class>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
