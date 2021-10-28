@@ -1,0 +1,20 @@
+//git commands
+
+1. to clone a existing project
+//setting up your project
+git clone urlofproject
+
+2. i changed few lines of code and i want to push those changes to github
+	a. check the status i.e how many files are changed
+	b. git add filename
+	c. git commit -m "comments"
+	d. git push
+
+3. changes to existing project
+git pull //it will fecth you the commits done by other team members in the same project
+
+4. i changed few lines of code and i want to push those changes to github
+	a. check the status i.e how many files are changed
+	b. git add filename
+	c. git commit -m "comments"
+	d. git push
